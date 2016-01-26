@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+    </script>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+ <title>Resume - Juan Carlos Herrera</title>
+
+  <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      </head>
+      <body>
+        <nav class="light-blue lighten-1" role="navigation">
+          <div class="nav-wrapper container"><a id="logo-container" href="/apps/resume" class="brand-logo">Resume - Juan Carlos Herrera</a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="tasks.html">Tasks</a></li>
+              <li><a href="subscribe.html">Subscribe</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+              <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          </div>
+        </nav>
+        <div class="section no-pad-bot" id="index-banner">
+          <div class="container">
+            
+            <h1 class="header center orange-text"></h1>
+            <div class="row center">
+              <h5 class="header col s12 light">
+               <div class="row">
+        <div class="col-offset-6 centered">
+           <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">list</i></h2>
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Tasks Assigned to Me</span>
+              <div class="card-content black-text">
+              <li class="collection" id="tasks"> </li>
+                </ul>
+            </div>
+            <div class="card-action">
+              <a href="https://todofirebaseteamkeymasters.firebaseapp.com/apps/todos/inbox.html">Add an item</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="container">
+        <ul id="tasks">
+        </ul>
+    </div>
+    <script>
+    //Button classes are clear and done
+    // create a firebase reference to the root
+    var ref = new Firebase('https://todofirebaseteamkeymasters.firebaseio.com/')
+        // read data from the location bio/tasks, only once
+    ref.child('todo-list/tasks').orderByValue().on('value', function(snapshot) {
+        var tasks = snapshot
+        document.getElementById("tasks").innerHTML = "";
+        snapshot.forEach(function(snapshot) {
+            tasks = snapshot.val()
+            completed = tasks.completed
+            key = snapshot.key()
+            console.log(completed)
+            console.log(key)
+            if (tasks.assignment === "jcherrera") {
+            $('#tasks').append('<a href="#!" class="collection-item">' + tasks.title + '<i class="task-entry-details">' + '</i>' + '<b class="task-entry-details">' +'</i>')
+          }
+        })
+    })
+    function makeCompleteButton(completed, task_key){
+        if(completed){
+            return '</li>' + '<a class="waves-effect waves-green completed-button">Completed!</a>' + '</li>' + '<p>&nbsp;</p'
+        }
+        else{
+            return '<div id="target">' + '<a class="btn waves-red" onclick=markAsCompleted(' + markAsCompleted(task_key) + ')>Mark complete</a>' + '</li>' + '<p>&nbsp;</p>'
+        }
+    }
+    function markAsCompleted(key) {
+        ref.child('todo-list/tasks/' + key).update({
+            completed: true
+        });
+    }
+    </script>
+    <script>
+    $("#add-button").click(function() {
+        console.log("OK")
+            // alert("Handler for .click() called.");
+    });
+    </script>
+</body>
+
+</html>

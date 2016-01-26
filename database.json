@@ -1,0 +1,13 @@
+{
+  "bio" : 
+  {
+    "favorite_foods" : [ "Tacos", "Burgers", "Sushi", "Pizza", "Wings" ],
+    "education" : [ "American School", "University of Colorado" ]
+  },
+
+  "db" : 
+  {
+    "subscribers" : [ "montemayorandres@hotmail.com" ]
+  }
+
+}
