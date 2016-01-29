@@ -39,40 +39,57 @@
             </ul>
           </div>
         </nav>
-
-<!-- End Header, Start cities.html -->
-<!-- Tabs -->
-  <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s3"><a class="active" href="#tab1">Test 1</a></li>
-        <li class="tab col s3"><a href="#tab2">Test 2</a></li>
-        <li class="tab col s3 "><a href="#tab3">Tab 3</a></li>
-        <li class="tab col s3"><a href="#tab4">Test 4</a></li>
-        <li class="tab col s3"><a href="#tab5">Test 5</a></li>
-      </ul>
-    </div>
-
-<!-- START First Tab -->
-        <div id="tab1" class="col s12">
-            
+<br>
              <div class="container">
                 <div id="cities"></div>
                 <div id="map" style="height:500px"></div>
-              </div>
+<script>
 
-              <script>
-
-              // create a firebase reference to the root
-              var weatherRef = new Firebase('https://publicdata-weather.firebaseio.com/austin');
-
-              var data
+              // create a firebase reference for AUSTIN to the root
+              var  weatherRefAustin = new Firebase('https://publicdata-weather.firebaseio.com/austin');
 
               // read data from only once
-              weatherRef.once('value', function(snapshot){
+               weatherRefAustin.once('value', function(snapshot){
                 var city = snapshot.val()
                 mapCity(city)
-                displayCity(city, 'austin')
+              })
+
+          // create a firebase reference for NEW YORK to the root
+              var  weatherRefNY = new Firebase('https://publicdata-weather.firebaseio.com/newyork');
+
+              // read data from only once
+               weatherRefNY.once('value', function(snapshot){
+                var city = snapshot.val()
+                mapCity(city)
+              })
+
+              // create a firebase reference for DENVER to the root
+              var  weatherRefDV = new Firebase('https://publicdata-weather.firebaseio.com/denver');
+
+              // read data from only once
+               weatherRefDV.once('value', function(snapshot){
+                var city = snapshot.val()
+                mapCity(city)
+              })
+
+              // create a firebase reference for Dallas to the root
+              var  weatherRefDA = new Firebase('https://publicdata-weather.firebaseio.com/dallas');
+
+              // read data from only once
+               weatherRefDA.once('value', function(snapshot){
+                var city = snapshot.val()
+                mapCity(city)
+
+              })
+
+              // create a firebase reference for DENVER to the root
+              var  weatherRefSA = new Firebase('https://publicdata-weather.firebaseio.com/sanantonio');
+
+              // read data from only once
+               weatherRefSA.once('value', function(snapshot){
+                var city = snapshot.val()
+                mapCity(city)
+
               })
 
               var attributionText = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a       href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
@@ -85,6 +102,8 @@
                   id: 'doubleshow.noeko77m',
                   accessToken: 'pk.eyJ1IjoiZG91Ymxlc2hvdyIsImEiOiJjaWZ5Y3B1eTE1MHRidWRtMG9uZXluajg4In0.u5ONW27Ly5cU7M5KYi6Y9Q'
               }).addTo(map)
+
+
 
               // create a layer group to hold all the markers
               var markersLayerGroup = L.layerGroup()
@@ -112,42 +131,6 @@
               }
 
             </script>
-          </div>
 
-<!-- End First Tab -->
-
-        <div id="tab2" class="col s12">
-          tab2
-        </div>
-        <div id="tab3" class="col s12">
-          tab3
-        </div>
-        <div id="tab4" class="col s12">
-          
-        </div>
-        <div id="tab5" class="col s12">
-          
-        </div>
-
-  </div>
-
-<!-- End Tabs -->
-
-<br>
-
- 
-
-
-
-<!-- Scripts to load -->
-
-<script>
-
-</script>
-
-<!--- End scripts to load -->
-
-
-<!-- Bound End -->
       </body>
 </html>
