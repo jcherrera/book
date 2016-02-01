@@ -31,7 +31,7 @@
       </head>
       <body>
         <nav class="light-blue lighten-1" role="navigation">
-          <div class="nav-wrapper container"><a id="logo-container" href="/apps/resume" class="brand-logo">Book - My Favorite Cities</a>
+          <div class="nav-wrapper container"><a id="logo-container" href="/apps/resume" class="brand-logo">Book - Favorite Cities</a>
             <ul class="right hide-on-med-and-down">
               <li><a href="tasks.html">Tasks</a></li>
               <li><a href="subscribe.html">Subscribe</a></li>
@@ -39,8 +39,8 @@
             </ul>
           </div>
         </nav>
-<br>   
 
+<br>   
 
     <div class = "container" >
 
@@ -109,11 +109,9 @@
         done ? display_all(sanfrancisco) : check(sanfrancisco)
       })
 
-
       function display_all(city){
         displayCity(city)
       }
-
 
       function displayCity(city){
         var name = city.name
@@ -135,7 +133,6 @@
         $('#' + name).empty()
         $('#' + name).append(data)
       }
-
 
   </script>
 
