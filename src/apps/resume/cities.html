@@ -39,115 +39,110 @@
             </ul>
           </div>
         </nav>
+<br>   
 
-<!-- End Header, Start cities.html -->
-<!-- Tabs -->
-  <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s3"><a class="active" href="#tab1">Test 1</a></li>
-        <li class="tab col s3"><a href="#tab2">Test 2</a></li>
-        <li class="tab col s3 "><a href="#tab3">Tab 3</a></li>
-        <li class="tab col s3"><a href="#tab4">Test 4</a></li>
-        <li class="tab col s3"><a href="#tab5">Test 5</a></li>
-      </ul>
-    </div>
+<!-- -->
 
-<!-- START First Tab -->
-        <div id="tab1" class="col s12">
-            
+
+
+
+    <div class = "container" >
+
+    <!-- MAP -->
+      <div class="row">
+        <div class="col s6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Map</span>  
              <div class="container">
-                <div id="cities"></div>
-                <div id="map" style="height:500px"></div>
-              </div>
-
-              <script>
-
-              // create a firebase reference to the root
-              var weatherRef = new Firebase('https://publicdata-weather.firebaseio.com/austin');
-
-              var data
-
-              // read data from only once
-              weatherRef.once('value', function(snapshot){
-                var city = snapshot.val()
-                mapCity(city)
-                displayCity(city, 'austin')
-              })
-
-              var attributionText = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a       href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
-
-              // initialzie the map
-              var map = L.map($('#map')[0]).setView([39.50, -98.35], 4)
-              L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                  attribution: attributionText,
-                  maxZoom: 18,
-                  id: 'doubleshow.noeko77m',
-                  accessToken: 'pk.eyJ1IjoiZG91Ymxlc2hvdyIsImEiOiJjaWZ5Y3B1eTE1MHRidWRtMG9uZXluajg4In0.u5ONW27Ly5cU7M5KYi6Y9Q'
-              }).addTo(map)
-
-              // create a layer group to hold all the markers
-              var markersLayerGroup = L.layerGroup()
-              // add the makers layer group to the map
-              markersLayerGroup.addTo(map)
-
-              // visualize cities on the map
-              function mapCity(city){
-                console.log('mapCity', city)
-                var latlng = [city.latitude, city.longitude]
-                var circle = L.circle(latlng, 10, {
-                    color: 'red',
-                    fillColor: '#f03',
-                    fillOpacity: 0.5
-                }).bindLabel('Austin')
-                
-                markersLayerGroup.addLayer(circle)
-              }
-
-              function displayCity(city, name){
-                console.log('displayCity', city)
-                $('#cities').append('<li class="collection-item">' + name +
-                  ' humidity = ' +
-                  JSON.stringify(city.currently) + '</li>')
-              }
-
-            </script>
+            </div>
+               <iframe src="https://mapsengine.google.com/map/u/0/embed?mid=zb5yaMkZn2mM.kZUROckFGn3k" width="440" height="490"></iframe>
           </div>
-
-<!-- End First Tab -->
-
-        <div id="tab2" class="col s12">
-          tab2
         </div>
-        <div id="tab3" class="col s12">
-          tab3
+      </div>
+    <!-- Weather INFO-->
+      <div class="row">
+        <div class="col s6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Weather Information</span>  
+             <div class="container">
+            </div>
+            <a class="collection-item" id="austin"></a>
+            <a class="collection-item" id="chicago"></a>
+            <a class="collection-item" id="newyork"></a>
+            <a class="collection-item" id="dallas"></a>
+            <a class="collection-item" id="sanfrancisco"></a>
+          </div>
         </div>
-        <div id="tab4" class="col s12">
-          
-        </div>
-        <div id="tab5" class="col s12">
-          
-        </div>
+      </div>
 
-  </div>
+   
 
-<!-- End Tabs -->
-
-<br>
-
- 
+  <script>
 
 
+//Initialize Variables
+      var weatherRef = new Firebase('https://publicdata-weather.firebaseio.com/');
+      var austin = {name: 'austin', friendlyName:'Austin, TX', weather: undefined}
+      var chicago = {name: 'chicago', friendlyName:'Chicago, IL', weather: undefined}
+      var newyork = {name: 'newyork', friendlyName:'New York, NY', weather: undefined}
+      var dallas = {name: 'dallas', friendlyName:'Dallas, TX', weather: undefined}
+      var sanfrancisco = {name: 'sanfrancisco', friendlyName:'San Francisco, CA', weather: undefined}
+      var done = true
 
-<!-- Scripts to load -->
 
-<script>
+//Read Data
+      weatherRef.child('austin').on('value', function(snapshot){
+        austin.weather = snapshot.val()
+        done ? display_all(austin) : updateData(austin)
+      })
+      weatherRef.child('chicago').on('value', function(snapshot){
+        chicago.weather = snapshot.val()
+        done ? display_all(chicago) : updateData(chicago)
+      })
+      weatherRef.child('newyork').on('value', function(snapshot){
+        newyork.weather = snapshot.val()
+        done ? display_all(newyork) : updateData(newyork)
+      })
+      weatherRef.child('dallas').on('value', function(snapshot){
+        dallas.weather = snapshot.val()
+        done ? display_all(dallas) : updateData(dallas)
+      })
+      weatherRef.child('sanfrancisco').on('value', function(snapshot){
+        sanfrancisco.weather = snapshot.val()
+        done ? display_all(sanfrancisco) : updateData(sanfrancisco)
+      })
 
-</script>
 
-<!--- End scripts to load -->
+      function display_all(city){
+        displayCity(city)
+      }
 
 
-<!-- Bound End -->
-      </body>
+      function displayCity(city){
+        var name = city.name
+        var friendlyName = city.friendlyName
+        var currently = city.weather.currently
+        var feels_like = currently.apparentTemperature
+        var humidity = Math.round(currently.humidity * 100)
+        var summary = currently.summary
+        var windSpeed = currently.windSpeed
+        var temperature = currently.temperature
+        var data = '<div class="row"><div class="col s12 m12"><div class="card blue-grey darken-1"><div class="card-content white-text">' + 
+        '<span class="card-title">' + friendlyName + '</span><ul>' +
+        '<li>Forecast: ' + summary + '</li>' + 
+        '<li>Temp: ' + temperature + ' ºF</li>' +
+        '<li>Feels Like: ' + feels_like + ' ºF </li>' +
+        '<li>Wind: ' + windSpeed + ' mph </li>' +
+        '<li>Humidity: ' + humidity + '% </li>' +
+        '</ul></div></div></div></div>'
+        $('#' + name).empty()
+        $('#' + name).append(data)
+      }
+
+
+  </script>
+
+</body>
 </html>
