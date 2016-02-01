@@ -41,10 +41,6 @@
         </nav>
 <br>   
 
-<!-- -->
-
-
-
 
     <div class = "container" >
 
@@ -56,16 +52,17 @@
               <span class="card-title">Map</span>  
              <div class="container">
             </div>
-               <iframe src="https://mapsengine.google.com/map/u/0/embed?mid=zb5yaMkZn2mM.kZUROckFGn3k" width="440" height="490"></iframe>
+               <iframe src="https://mapsengine.google.com/map/u/0/embed?mid=zb5yaMkZn2mM.kZUROckFGn3k" width="440" height="500"></iframe>
           </div>
         </div>
       </div>
     <!-- Weather INFO-->
+
       <div class="row">
         <div class="col s6">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
-              <span class="card-title">Weather Information</span>  
+              <span class="card-title">Forecast: </span>  
              <div class="container">
             </div>
             <a class="collection-item" id="austin"></a>
@@ -76,8 +73,6 @@
           </div>
         </div>
       </div>
-
-   
 
   <script>
 
@@ -95,23 +90,23 @@
 //Read Data
       weatherRef.child('austin').on('value', function(snapshot){
         austin.weather = snapshot.val()
-        done ? display_all(austin) : updateData(austin)
+        done ? display_all(austin) : check(austin)
       })
       weatherRef.child('chicago').on('value', function(snapshot){
         chicago.weather = snapshot.val()
-        done ? display_all(chicago) : updateData(chicago)
+        done ? display_all(chicago) : check(chicago)
       })
       weatherRef.child('newyork').on('value', function(snapshot){
         newyork.weather = snapshot.val()
-        done ? display_all(newyork) : updateData(newyork)
+        done ? display_all(newyork) : check(newyork)
       })
       weatherRef.child('dallas').on('value', function(snapshot){
         dallas.weather = snapshot.val()
-        done ? display_all(dallas) : updateData(dallas)
+        done ? display_all(dallas) : check(dallas)
       })
       weatherRef.child('sanfrancisco').on('value', function(snapshot){
         sanfrancisco.weather = snapshot.val()
-        done ? display_all(sanfrancisco) : updateData(sanfrancisco)
+        done ? display_all(sanfrancisco) : check(sanfrancisco)
       })
 
 
@@ -122,7 +117,7 @@
 
       function displayCity(city){
         var name = city.name
-        var friendlyName = city.friendlyName
+        var cName = city.friendlyName
         var currently = city.weather.currently
         var feels_like = currently.apparentTemperature
         var humidity = Math.round(currently.humidity * 100)
@@ -130,7 +125,7 @@
         var windSpeed = currently.windSpeed
         var temperature = currently.temperature
         var data = '<div class="row"><div class="col s12 m12"><div class="card blue-grey darken-1"><div class="card-content white-text">' + 
-        '<span class="card-title">' + friendlyName + '</span><ul>' +
+        '<span class="card-title">' + cName + '</span><ul>' +
         '<li>Forecast: ' + summary + '</li>' + 
         '<li>Temp: ' + temperature + ' ºF</li>' +
         '<li>Feels Like: ' + feels_like + ' ºF </li>' +
