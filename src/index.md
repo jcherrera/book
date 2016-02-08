@@ -7,10 +7,6 @@ layout: layout.hbs
 Everything I've learned from UCDD 2 - Spring 2016.
 
 ## Apps
-
-
-## Learning
-
 * [ToDo List (Team 1)](https://todofirebaseteamkeymasters.firebaseapp.com/apps/todos/)
 * [Parking (Team 2)](https://hello-ucdd2016.firebaseapp.com/apps/parking/) 
 	* [React](https://hello-ucdd2016.firebaseapp.com/apps/parking/react/) <span class="chip red">NEW</span></li>
