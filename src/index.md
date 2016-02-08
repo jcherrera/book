@@ -2,30 +2,24 @@
 layout: layout.hbs
 ---
 
-# Book
+# Book - Juan Carlos Herrera
 
 Everything I've learned from UCDD 2 - Spring 2016.
 
 ## Apps
-<<<<<<< HEAD
-* [ToDo List (Team)](https://todofirebaseteamkeymasters.firebaseapp.com/apps/todos/)
+* [ToDo List (Team 1)](https://todofirebaseteamkeymasters.firebaseapp.com/apps/todos/)
+* [Parking (Team 2)](https://hello-ucdd2016.firebaseapp.com/apps/parking/) 
 * [My Resume](apps/resume/)
-=======
-* [ToDos](apps/todos/)
-* [Resume](apps/resume/)
-  * [ReactJS](apps/resume/react)
-* [Parking](apps/parking/)
-  * [ReactJS](apps/parking/react)
->>>>>>> upstream/master
+* [React](apps/resume/react) <span class="chip red">NEW</span></li>
 
 ## Learning
-* [Week 4](learning/week4) <span class="chip red">NEW</span>
-* [Week 3](learning/week3)
-* [Week 2](learning/week2)
-* [Week 1](learning/week1)
 * [Intro](learning/intro)
+* [Week 1](learning/week1)
+* [Week 2](learning/week2)
+* [Week 3](learning/week3)
+* [Week 4](learning/week4) <span class="chip red">NEW</span></li>
 
 ## Hackathons
-* [02-01](hackathons/02-01) <span class="chip red">NEW</span>
-* [01-25](hackathons/01-25)
 * [01-18](hackathons/01-18)
+* [01-25](hackathons/01-25)
+* [02-01](hackathons/02-01) <span class="chip red">NEW</span></li>

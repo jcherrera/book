@@ -4,9 +4,10 @@ MyComponents.About = React.createClass({
     return (
       <div className="card">
         <div className="card-content">
-        TODO: This is a component to display the basic
-        information about myself such as name, profile photo,
-        major, birth place, ... etc.
+  <ul><li>Name: Juan Carlos Herrera</li></ul>
+  <ul><li>Major: Computer Science & Economics</li></ul>
+  <ul><li>Github:  <a href="https://github.com/jcherrera">Juan Carlos Herrera</a> </li></ul>
+
         </div>
       </div>
     );
