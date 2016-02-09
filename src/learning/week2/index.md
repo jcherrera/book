@@ -41,7 +41,7 @@ Sunday @ 11:59pm, 1/24/2016
 
 * [ X ] Add a __Tasks__ section the main page of your resume app ([index.html](/apps/resume/index.html)).
 This section should displays a list of tasks assigned to you. These tasks are pulled from your team's Firebase.
-* [ ] Create a __Subscribe__ page ([subscribe.html](/apps/resume/subscribe.html)).
+* [ X ] Create a __Subscribe__ page ([subscribe.html](/apps/resume/subscribe.html)).
 This page should have a simple text box for a visitor (e.g., prospective employer)
 to enter an email  address to subscribe to a mailing list. Each email address should
 be stored to the Firebase. Also, the page should display all the subscribers' emails.

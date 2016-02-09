@@ -11,9 +11,9 @@ Everything I've learned from UCDD 2 - Spring 2016.
 * [Parking (Team 2)](https://hello-ucdd2016.firebaseapp.com/apps/parking/) 
 	* [React](https://hello-ucdd2016.firebaseapp.com/apps/parking/react/) 
 * [My Resume](apps/resume/)
-	* [React](apps/resume/react) 
+	* [React](apps/resume/react)
 * Uber <span class="chip red">NEW</span>
-  * [Mockup](apps/uber/mockup)
+  * [Mockup](https://pizzarollz.firebaseapp.com/apps/uber/mockup)
   * [ReactJS](apps/uber/)
 
 ## Learning

@@ -2,12 +2,19 @@ MyComponents.About = React.createClass({
 
   render: function() {
     return (
-      <div className="card">
-        <div className="card-content">
-  <ul><li>Name: Juan Carlos Herrera</li></ul>
-  <ul><li>Major: Computer Science & Economics</li></ul>
-  <ul><li>Github:  <a href="https://github.com/jcherrera">Juan Carlos Herrera</a> </li></ul>
-
+      <div className="card light blue">
+        <div className="card-content white-text">
+          <div className="row">
+ 
+            <div className="col 12">
+              <ul>
+                <li><b>Name: </b> Juan Carlos Herrera</li>
+                <li><b>Major: </b> Computer Science & Economics</li>
+                <li><b>Year: </b> Junior</li>
+                <li><b>Github:</b> <a href="https://github.com/jcherrera">jcherrera</a></li>
+              </ul>
+            </div>
+          </div>  
         </div>
       </div>
     );
