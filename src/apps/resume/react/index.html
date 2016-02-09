@@ -79,12 +79,12 @@
         })
 
       weatherRef.on('value', function(snapshot){
-        var citiesDB = snapshot.val()
-        //console.log(citiesDB)
+        var cities_data = snapshot.val()
+        //console.log(cities_data)
         var cities = []
-        for(var key in citiesDB){ 
+        for(var key in cities_data){ 
             if (key == "austin" || key == "chicago" || key == "newyork" || key == "dallas" || key == "sanfrancisco")
-            {var curCity = citiesDB[key]
+            {var curCity = cities_data[key]
             curCity.name = key
             cities.push(curCity)}
           }
@@ -95,7 +95,7 @@
       })
 
 
-//Tasks Firebase
+//Tasks firebase
       // TODO: load tasks data from Firebase
       var refTasks = new Firebase('https://todofirebaseteamkeymasters.firebaseio.com');
 
@@ -105,8 +105,9 @@
 
        snapshot.forEach(function(childSnapshot) {
        var childData = childSnapshot.val();
+       console.log(childData.assignment === "jcherrera")
          if(childData.assignment == "jcherrera"){
-             myList.push({title: childData.Title});
+             myList.push({title: childData.title});
          }
        })
 
