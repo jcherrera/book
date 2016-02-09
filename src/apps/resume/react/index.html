@@ -51,7 +51,6 @@
 
       var weatherRef = new Firebase('https://publicdata-weather.firebaseio.com');
       var ref = new Firebase('https://bookjch.firebaseio.com/')
-      var refTeam = new Firebase('https://todofirebaseteamkeymasters.firebaseio.com')
 
 
       ReactDOM.render(
@@ -65,7 +64,7 @@
       );
 
       // TODO: load tasks data from Firebase
-      var tasks = []
+
 
       // TODO: load city weather data from Firebase
 
@@ -95,21 +94,28 @@
         );
       })
 
-// Grab the tasks information
-        refTeam.child('todo-list/tasks').orderByValue().on('value', function(snapshot){
-          var tasksDB = snapshot.val()
-          $('#tasks').empty()
-          for( var key in tasksDB){ 
-            var curTask = tasksDB[key];
-            if (curTask.assigned == "jcherrera")
-            {tasks.push(curTask)}
-          }
 
-          ReactDOM.render(
-            <MyComponents.TaskList tasks={tasks}/>,
-            $('#tasks').get(0)
-          );
-        })
+//Tasks Firebase
+      // TODO: load tasks data from Firebase
+      var refTasks = new Firebase('https://todofirebaseteamkeymasters.firebaseio.com');
+
+      refTasks.child('todos-list/tasks').on('value', function(snapshot) {
+        var todos = snapshot.val() 
+        var myList = []
+
+       snapshot.forEach(function(childSnapshot) {
+       var childData = childSnapshot.val();
+         if(childData.assignment == "jcherrera"){
+             myList.push({title: childData.Title});
+         }
+       })
+
+
+        ReactDOM.render(
+          <MyComponents.TaskList tasks={myList}/>,
+          $('#tasks').get(0)
+        );  
+      });
 
 
       

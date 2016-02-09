@@ -10,11 +10,12 @@ Everything I've learned from UCDD 2 - Spring 2016.
 * [ToDo List (Team 1)](https://todofirebaseteamkeymasters.firebaseapp.com/apps/todos/)
 * [Parking (Team 2)](https://hello-ucdd2016.firebaseapp.com/apps/parking/) 
 	* [React](https://hello-ucdd2016.firebaseapp.com/apps/parking/react/) 
+* Uber (Team 3) <span class="chip red">NEW</span>
+  * [Mockup](https://pizzarollz.firebaseapp.com/apps/uber/mockup)
+  * [ReactJS](https://pizzarollz.firebaseapp.com/apps/uber/mockup)
 * [My Resume](apps/resume/)
 	* [React](apps/resume/react)
-* Uber <span class="chip red">NEW</span>
-  * [Mockup](https://pizzarollz.firebaseapp.com/apps/uber/mockup)
-  * [ReactJS](apps/uber/)
+
 
 ## Learning
 * [Week 5](learning/week5) <span class="chip red">NEW</span>
