@@ -50,6 +50,7 @@
     <script type="text/babel">
 
       var weatherRef = new Firebase('https://publicdata-weather.firebaseio.com');
+      var teamRef = new Firebase('https://todofirebaseteamkeymasters.firebaseio.com/')
       var ref = new Firebase('https://bookjch.firebaseio.com/')
 
 
@@ -96,28 +97,23 @@
 
 
 //Tasks firebase
+
+
       // TODO: load tasks data from Firebase
-      var refTasks = new Firebase('https://todofirebaseteamkeymasters.firebaseio.com');
-
-      refTasks.child('todos-list/tasks').on('value', function(snapshot) {
-        var todos = snapshot.val() 
-        var myList = []
-
-       snapshot.forEach(function(childSnapshot) {
-       var childData = childSnapshot.val();
-       console.log(childData.assignment === "jcherrera")
-         if(childData.assignment == "jcherrera"){
-             myList.push({title: childData.title});
-         }
-       })
-
-
+      teamRef.child('todo-list/tasks').orderByValue().on('value', function(snapshot) {
+        $('#tasks').empty()
+        var tasks = new Array()
+        snapshot.forEach(function(snapshot) {
+          var task = snapshot.val()
+          if(task.assignment == "jcherrera"){
+            tasks.push(task)
+          }
+        })
         ReactDOM.render(
-          <MyComponents.TaskList tasks={myList}/>,
+          <MyComponents.TaskList tasks={tasks}/>,
           $('#tasks').get(0)
-        );  
-      });
-
+          );
+      })
 
       
     </script>
