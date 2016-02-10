@@ -11,7 +11,7 @@ MyComponents.Task = React.createClass({
       <div className={"card light blue"}>
         <div className="card-content">
         <ul className="collection-item white-text">
-          <li><h5 className="custom-yellow-text">{this.props.task.title}({completed})</h5></li>
+          <li><h5>{this.props.task.title}</h5></li>
           <li>Due: {this.props.task.due}</li>
           <li>Priority: {this.props.task.priority}</li>
         </ul> 
