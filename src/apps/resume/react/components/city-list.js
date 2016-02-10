@@ -2,7 +2,7 @@ MyComponents.City = React.createClass({
 
   render: function() {
     return (
-      <div className="card">
+      <div className="card light blue">
         <div className="card-content">
         <span className="card-title">{this.props.city.name.toUpperCase()} </span>
 
@@ -34,7 +34,7 @@ MyComponents.CityList = React.createClass({
   return <MyComponents.City city={c} key={i}/>
     })
     return (
-      <div className="card">
+      <div className="card light blue">
         <div className="card-content">
         {cityElements}
         </div>
