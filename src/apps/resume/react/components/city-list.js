@@ -12,9 +12,9 @@ MyComponents.City = React.createClass({
                 <h5>Forecast: </h5>
                 <ul>
                   <li><h6><b>Summary:</b> {this.props.city.daily.summary} </h6></li>
-                  <li><h6><b>Temp:</b> {this.props.city.currently.temperature} deg</h6></li>
-                  <li><h6><b>Precipitation:</b> {this.props.city.currently.precipProbability}%</h6></li>
-                  <li><h6><b>Humidity:</b> {this.props.city.currently.humidity}%</h6></li>
+                  <li><h6><b>Temp:</b> {this.props.city.currently.temperature} ºF</h6></li>
+                  <li><h6><b>Precipitation:</b> {this.props.city.currently.precipProbability} %</h6></li>
+                  <li><h6><b>Humidity:</b> {this.props.city.currently.humidity} %</h6></li>
                   <li><h6><b>Conditions:</b> {this.props.city.currently.summary}</h6></li>
                   <li><h6><b>Wind:</b> {this.props.city.currently.windSpeed} mph</h6></li>
                 </ul>

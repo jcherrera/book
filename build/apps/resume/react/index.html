@@ -9,12 +9,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-
-
     <script src="lib/react.js"></script>
     <script src="lib/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
   </head>
   <body>
     <div class="container">
@@ -33,14 +32,12 @@
       <div id="cities"></div>
     </div>
     <script>
-      // MyComponents is a global object where each property is a reference to a component class
-      MyComponents = {}
+    MyComponents = {}
     </script>
 
     <!-- import each component class in components/ -->
 
     <script type="text/babel" src="components/navbar.js"></script>
-
     <script type="text/babel" src="components/about.js"></script>
     <script type="text/babel" src="components/task-list.js"></script>
     <script type="text/babel" src="components/city-list.js"></script>
