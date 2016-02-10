@@ -11,7 +11,7 @@ MyComponents.About = React.createClass({
                 <li><b>Name: </b> Juan Carlos Herrera</li>
                 <li><b>Major: </b> Computer Science & Economics</li>
                 <li><b>Year: </b> Junior</li>
-                <li><b>Github:</b> <a href="https://github.com/jcherrera">jcherrera</a></li>
+                <li><b>Github.com/jcherrera </b></li>
               </ul>
             </div>
           </div>  
@@ -21,3 +21,5 @@ MyComponents.About = React.createClass({
   }
 
 });
+
+

@@ -1,12 +1,6 @@
 MyComponents.Task = React.createClass({
 
   render: function() {
-    var color = "green"
-    var completed = "Completed!"
-    if(this.props.task.completed == false){
-      color = "red"
-      completed = "Incomplete"
-    }
     return (
       <div className={"card light blue"}>
         <div className="card-content">
