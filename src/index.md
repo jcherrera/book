@@ -13,7 +13,7 @@ Everything I've learned from UCDD 2 - Spring 2016.
 	* [React](https://hello-ucdd2016.firebaseapp.com/apps/parking/react/) 
 * Uber (Team 3) <span class="chip red">NEW</span>
   * [Mockup](https://teamroar.firebaseapp.com/apps/uber/mockup/index.html)
-  * [ReactJS](https://teamroar.firebaseapp.com/apps/uber/mockup/index.html)
+  * [ReactJS](https://team-roar.firebaseapp.com/apps/uber/)
 * [My Resume](apps/resume/)
 	* [React](apps/resume/react)
 * Together <span class="chip red">NEW</span>
