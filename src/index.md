@@ -15,7 +15,7 @@ Everything I've learned from UCDD 2 - Spring 2016.
   * [Mockup](https://teamroar.firebaseapp.com/apps/uber/mockup/index.html)
   * [ReactJS](https://team-roar.firebaseapp.com/apps/uber/)
   * Demo: <span class="chip red">NEW</span>
-    * [Plan](apps/uber/demo/plan.html)
+    * [Plan](https://team-roar.firebaseapp.com/apps/uber/demo/plan.html)
     * [Execution](apps/uber/demo/execution.html)
 * [My Resume](apps/resume/)
 	* [React](apps/resume/react)
