@@ -8,15 +8,15 @@ Everything I've learned from UCDD 2 - Spring 2016.
 
 ## Apps
 
-* [ToDo List (Team 1)](https://todofirebaseteamkeymasters.firebaseapp.com/apps/todos/)
-* [Parking (Team 2)](https://hello-ucdd2016.firebaseapp.com/apps/parking/) 
-	* [React](https://hello-ucdd2016.firebaseapp.com/apps/parking/react/) 
+* [ToDo List (Team 1)](/apps/todos/)
+* [Parking (Team 2)](/apps/parking/) 
+	* [React](/apps/parking/react/) 
 * Uber (Team 3) 
-  * [Mockup](https://teamroar.firebaseapp.com/apps/uber/mockup/index.html)
-  * [ReactJS](https://team-roar.firebaseapp.com/apps/uber/)
+  * [Mockup](/apps/uber/mockup/index.html)
+  * [ReactJS](/apps/uber/)
   * Demo: <span class="chip red">NEW</span>
-    * [Plan](https://team-roar.firebaseapp.com/apps/uber/demo/plan.html)
-    * [Execution](https://team-roar.firebaseapp.com/apps/uber/demo/execution.html)
+    * [Plan](/apps/uber/demo/plan.html)
+    * [Execution](/apps/uber/demo/execution.html)
 * [My Resume](apps/resume/)
 	* [React](apps/resume/react)
 * Together 
