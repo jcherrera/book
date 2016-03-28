@@ -2,22 +2,8 @@
 layout: layout.hbs
 ---
 
+# Revision
+I didn't have to update the model besides changing a few fixed-width settings to relative ones. As for what the user's can see live, they should be able to see the changes in the polls on the chart live as well as the number of active users.
+
 # Data Models
-
-## Client
-* Unique Identifiers for each user.
-* Track users current position.
-* Track users realtime changes.
-* Continue to use chatango for communication.
-* (Google has a real time API that I could use for the live text, this will manage timestamps and users. (Much easier implementation))
-
-
-## Admin
-* Unique Identifiers for each administrator.
-* Tracking user changes.
-
-
-## Revisions
-* Added boundaries so images would not go over the sides.
-
-
+Votes: { userId: string; vote: int; }
