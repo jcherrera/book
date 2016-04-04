@@ -20,14 +20,15 @@ Everything I've learned from UCDD 2 - Spring 2016.
 * [My Resume](apps/resume/)
 	* [React](apps/resume/react)
 * Together 
-  * [Mockup](apps/together/mockup)
-    * [Data Models](apps/together/mockup/data.html)
-  * [ReactJS](apps/together) <span class="chip red">NEW</span>
-  * [Mockup Team](apps/together/mockup-team) <span class="chip red">NEW</span>        
-  * [ReactJS](apps/together)
+  * [Mockup](/apps/together/mockup)
+    * [Data Models](/apps/together/mockup/data.html)
+  * [Mockup Team](/apps/together/mockup-team) 
+  * [ReactPolive](/apps/together/mockup-team/new) <span class="chip red">NEW</span>        
+  * [Group Proposal](/apps/together/proposal/index.html)
 
 ## Learning
-* [Week 8](learning/week8) <span class="chip red">NEW</span>
+* [Week 11](learning/week11)  <span class="chip red">NEW</span>
+* [Week 8](learning/week8)
 * [Week 7](learning/week7)
 * [Week 6](learning/week6)
 * [Week 5](learning/week5)
@@ -35,6 +36,12 @@ Everything I've learned from UCDD 2 - Spring 2016.
 * [Week 3](learning/week3)
 * [Week 2](learning/week2)
 * [Week 1](learning/week1)
+
+
+## Upcoming
+* [Week 12](learning/week12)
+* [Week 13](learning/week13)
+* [Week 14](learning/week14)
 
 
 ## Hackathons

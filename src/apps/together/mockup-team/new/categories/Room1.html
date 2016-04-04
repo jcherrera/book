@@ -11,8 +11,8 @@
 }
   </style>
     <head>
-    <ul id="tab_title"></ul>
-  <meta charset="UTF-8" />
+    <title>Polive - Real-time polling data</title>
+    <meta charset="UTF-8" />
     <link rel="icon" type="x-icon" href="images/ficon.ico">
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,16 +29,13 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
       <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 	  
-      <!-- Polive React scripts -->
+    <!-- Polive React scripts -->
 	  <!-- JSX scripts to components-->
-      <script type="text/babel" src="../components/navbar.jsx"></script>
 	  <script type="text/babel" src="../components/room1.jsx"></script>
-      <!-- Connect the app and data -->
-      <script type="text/babel" src="../data.jsx"></script>
-	  <!-- Connect page specific components-->
+      <script type="text/babel" src="../components/navbar.jsx"></script>  
 	  <script type="text/babel" src="./components/chart.jsx"></script> 
-	  <script type="text/babel" src="./components/title.jsx"></script>
-	  <script type="text/babel" src="./components/users.jsx"></script>
+	  <!-- IMPORTANT: THIS MUST BE LAST SCRIPT LOADED! Connect the app and data -->
+      <script type="text/babel" src="../data.jsx"></script>
 	  
 	  
     </head> 
@@ -47,7 +44,7 @@
     <div id="nav-bar-container"></div>
     <div class="card-panel light-green lighten-3">
       <div class="row">
-        <div class="col s12" id = "category_title"></div>
+        <div class="col s12" id = "categoryTitle"></div>
 		<div class="col s12" id = "roomNumber"></div>
         <div class="col s12 m4 l2">
           <div class="card-panel light-green darken-3">
@@ -104,132 +101,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
     <script src="js/Chart.js"></script>
     <script src="js/init.js"></script>
-	
-    <!-- This is the chart display script: -->
-    <script>
-		// var ctx = document.getElementById("myChart2").getContext("2d");
-		// var data = {
-		//   labels: ["January", "February", "March", "April", "May", "June", "July"],
-		//   datasets: [
-		// 	  {
-		// 		label: "My First dataset",
-		// 		fillColor: "rgba(220,220,220,0.2)",
-		// 		strokeColor: "rgba(220,220,220,1)",
-		// 		pointColor: "rgba(220,220,220,1)",
-		// 		pointStrokeColor: "#fff",
-		// 		pointHighlightFill: "#fff",
-		// 		pointHighlightStroke: "rgba(220,220,220,1)",
-		// 		data: [65, 59, 80, 81, 56, 55, 40]
-		// 	  },
-		// 	  {
-		// 		label: "My Second dataset",
-		// 		fillColor: "rgba(151,187,205,0.2)",
-		// 		strokeColor: "rgba(151,187,205,1)",
-		// 		pointColor: "rgba(151,187,205,1)",
-		// 		pointStrokeColor: "#fff",
-		// 		pointHighlightFill: "#fff",
-		// 		pointHighlightStroke: "rgba(151,187,205,1)",
-		// 		data: [28, 48, 40, 19, 86, 27, 90]
-		// 	  }
-		//   ]
-		// };
-		// var options = {bezierCurve: false}
-		// var myLineChart = new Chart(ctx).Line(data, options);
-    </script>
-	<!-- End of chart script: -->
-	
-	<!-- Get Votes from firebase -->
-    <script type="text/babel">
-        var votecount = new Firebase('https://team-polive.firebaseio.com/rooms/Room1');
-        var votes = {no: 0, yes: 0};
-        ReactDOM.render(
-          <MyComponents.Votes votes={votes}/>,
-          $('#votes').get(0));
-          votecount.on('value', function(data) {
-            var roomData = data.val();
-            votes.no = roomData.no;
-            votes.yes = roomData.yes;
-            ReactDOM.render(
-              <MyComponents.Votes votes={votes}/>,
-              $('#votes').get(0)
-            );
-          });
 
-    </script>
-
-    <!-- Voting -->
-    <script type="text/babel">
-        var votecount = new Firebase('https://team-polive.firebaseio.com/rooms/Room1');
-        var votes = {no: 0, yes: 0};
-        ReactDOM.render(
-          <MyComponents.Votes votes={votes}/>,
-          $('#votes').get(0));
-          votecount.on('value', function(data) {
-            var roomData = data.val();
-            votes.no = roomData.no;
-            votes.yes = roomData.yes;
-
-            var myCastVoteFunction = function(){
-              console.log('I am called')
-
-              votes.yes += 1
-              votecount.set(votes)
-            }
-
-            ReactDOM.render(
-              <MyComponents.Votes votes={votes} castVote={myCastVoteFunction}/>,
-              $('#votes').get(0)
-            );
-          });
-
-    </script>
-	
-	<!-- Get Room Title from firebase -->
-    <script type="text/babel">
-        var roomtitle = new Firebase('https://team-polive.firebaseio.com/rooms/Room1');
-        var titleRoom = {category: 'None'};
-        ReactDOM.render(
-          <MyComponents.Title title={titleRoom}/>,
-          $('#category_title').get(0));
-          roomtitle.once('value', function(data) {
-            var roomData = data.val();
-            titleRoom.category = roomData.name;		
-            ReactDOM.render(
-              <MyComponents.Title title={titleRoom}/>,
-              $('#category_title').get(0)
-            );
-          });
-    </script>
-	
-	<!-- Get users from firebase -->
-	<script type="text/babel">	
-	    var roomtitle = new Firebase('https://team-polive.firebaseio.com/users');
-	    var user = [];
-		var tempUser = '';
-		//Initialize the user array
-		user.push(tempUser);
-		
-		ReactDOM.render(
-          <MyComponents.Users users={user}/>,
-          $('#name').get(0));
-          roomtitle.orderByChild("room").equalTo("Room1").on('value', function(data){
-		    data.forEach(function(users) {
-              var userdb = users.child("username").val();		  
-			  tempUser = userdb;
-              user.push(tempUser);			 
-			})
-			for (var i = 0; i < user.length; i++) {
-				console.log("user: ", user[i]);
-			}
-			//Re-render with updates
-		    ReactDOM.render(
-			    <MyComponents.Users users={user}/>,
-				$('#name').get(0)
-			);
-			//After pushing clear the old array
-			user = [];
-          });
-	</script>
 	
     <script>
       // MyComponents is a global object where each property is a reference to a component class
