@@ -19,7 +19,7 @@ Everything I've learned from UCDD 2 - Spring 2016.
     * [Execution](/apps/uber/demo/execution.html)
 * [My Resume](apps/resume/)
 	* [React](apps/resume/react)
-* Together 
+* Together (Team 4) 
   * [Mockup](/apps/together/mockup)
     * [Data Models](/apps/together/mockup/data.html)
   * [Mockup Team](/apps/together/mockup-team) 
