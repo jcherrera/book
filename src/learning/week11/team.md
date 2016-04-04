@@ -35,19 +35,19 @@ like the screenshot below:
 These features are:
 
 ### Map
-1. [  ] The center of each fiber is marked by a red circle. In the template code,
+1. [ X ] The center of each fiber is marked by a red circle. In the template code,
 the center is marked incorrectly. __(10 points)__
-1. [  ] A circle should be drawn to visualize a neighborhood with a radius of 1000
+1. [ X ] A circle should be drawn to visualize a neighborhood with a radius of 1000
 meters centered on the position selected by the user. __(10 points)__
-1. [  ] The fiber whose center is within the nearby neighbor radius should be
+1. [ X ] The fiber whose center is within the nearby neighbor radius should be
 highlighted in red. __(10 points)__
 
 ### Cost Table
-1. [  ] There should be a header at the top of the table. __(10 points)__
-1. [  ] The distance should be calculated correctly. __(10 points)__
-1. [  ] The cost should be calculated based on the distance using a
+1. [ X ] There should be a header at the top of the table. __(10 points)__
+1. [ X ] The distance should be calculated correctly. __(10 points)__
+1. [ X ] The cost should be calculated based on the distance using a
 formula determined by your team. __(10 points)__
-1. [  ] The rows corresponding to the fibers within 1000 meters from the selected
+1. [ X ] The rows corresponding to the fibers within 1000 meters from the selected
 position should be highlighted in yellow. __(10 points)__
 
 ## Development / Deployment
