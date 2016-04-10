@@ -26,6 +26,7 @@ Everything I've learned from UCDD 2 - Spring 2016.
   * [ReactPolive](/apps/together/mockup-team/new) <span class="chip red">NEW</span>
   * [Group Proposal](/apps/together/proposal/index.html)
 * [Fiber](https://github.com/jcherrera/fiber)
+* [CraftML (Individual)](https://craftml.io/A88Yd)
 
 ## Learning
 * [Week 11](learning/week11)  <span class="chip red">NEW</span>
