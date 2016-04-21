@@ -29,7 +29,10 @@ Everything I've learned from UCDD 2 - Spring 2016.
 * [CraftML (Individual)](https://craftml.io/A88Yd)
 
 ## Learning
-* [Week 11](learning/week11)  <span class="chip red">NEW</span>
+* [Week 14](learning/week14) <span class="chip red">NEW</span>
+* [Week 13](learning/week13)
+* [Week 12](learning/week12)
+* [Week 11](learning/week11)  
 * [Week 8](learning/week8)
 * [Week 7](learning/week7)
 * [Week 6](learning/week6)
@@ -38,12 +41,6 @@ Everything I've learned from UCDD 2 - Spring 2016.
 * [Week 3](learning/week3)
 * [Week 2](learning/week2)
 * [Week 1](learning/week1)
-
-
-## Upcoming
-* [Week 12](learning/week12)
-* [Week 13](learning/week13)
-* [Week 14](learning/week14)
 
 
 ## Hackathons
